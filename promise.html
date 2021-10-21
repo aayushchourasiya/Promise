@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promise Example!</title>
+  </head>
+  <body></body>
+  <script>
+    var num = 10;
+    const myPromise = new Promise(function (resolve, reject) {
+      num += 10;
+      if (num === 10) {
+        console.log("Resolved");
+        resolve();
+      } else {
+        console.log("Reject");
+        reject("Reject");
+      }
+    });
+
+    myPromise.then(function () {
+        console.log("Then Resolve");
+      })
+      .catch(function () {
+        console.log("Then Reject");
+      });
+  </script>
+</html>

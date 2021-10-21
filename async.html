@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Async Example!</title>
+  </head>
+  <body></body>
+  <script>
+    var arr = 10
+    async function myFunction(){
+        return new Promise(function(resolve,reject){
+            setTimeout(function(){
+                arr += 10
+                if(arr === 10){
+                    console.log("Reject")
+                    reject()
+                }
+                else{
+                    console.log("Resolve");
+                    resolve()
+                }
+            },1000)
+        })
+    }
+    myFunction().then(function(){
+        console.log("Current array:" , arr )
+    }).catch(function(){
+        console.log("Catch array:" , arr)
+
+    })
+  </script>
+</html>
